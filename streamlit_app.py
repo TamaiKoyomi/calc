@@ -19,7 +19,8 @@ def show_name_input():
     with st.form(key='input_form'):
         user_name = st.text_input('名前を入力してください。', value=st.session_state.user_name)
         st.write('所属チームを選択してください。')
-        
+
+        # チーム選択ボタン
         col1, col2 = st.columns(2)
         with col1:
             if st.button('a'):
@@ -68,12 +69,12 @@ def show_game():
     
         # セッションステートに選択された単語を保存
         st.session_state.selected_word = selected_word
-        st.session_state.display_meaning = False
 
     if 'selected_word' in st.session_state:
         st.header(f"単語名: {st.session_state.selected_word['単語']}")
         st.subheader(f"読み方：{st.session_state.selected_word['読み方']}")
 
+        # ボタンの処理
         if st.button('文学・哲学的なテーマ性'):
             if judge('文学・哲学的なテーマ性'):
                 st.write('正解です。おめでとうございます！正確な意味も確認しましょう。')
