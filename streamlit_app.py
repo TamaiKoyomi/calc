@@ -3,7 +3,7 @@ import random
 
 li = []
 
-su = st.number_input()
+su = st.number_input('any')
 if st.button('計算'):
     for i in range(su):
         li.append(random.randint(1,100))
